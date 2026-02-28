@@ -1,0 +1,35 @@
+{
+  "name": "remotion-workspace",
+  "version": "1.0.0",
+  "description": "Remotion workspace for various video projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "remotion preview",
+    "render": "remotion render src/index.ts MyComp out/video.mp4",
+    "test": "remotion test"
+  },
+  "dependencies": {
+    "remotion": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/eslint-config": "^4.0.0",
+    "eslint": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "remotion",
+    "video",
+    "react"
+  ],
+  "author": "Allen",
+  "license": "UNLICENSED"
+}
