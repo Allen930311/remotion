@@ -67,3 +67,4 @@ These are custom rules distilled from hands-on project experience:
 - [rules-custom/rendering.md](rules-custom/rendering.md) - Rendering commands, platform specs, Colab/Windows compatibility
 - [rules-custom/2.5d-showcase.md](rules-custom/2.5d-showcase.md) - 2.5D product showcase: phone container + 3D rotation + SVG lines
 - [rules-custom/prompting.md](rules-custom/prompting.md) - Structured prompting framework for AI-generated Remotion code
+- [rules-custom/library-selection.md](rules-custom/library-selection.md) - Animation & visualization library selection guide with Remotion integration tips
