@@ -6,6 +6,7 @@ import { AutoSkillIntro } from "../projects/auto-skill-intro/src/index";
 import { RemotionSkillsShowcase } from "../projects/remotion-skills-showcase/src/index";
 import { AnimationPlayground } from "../projects/animation-playground/src/index";
 import { ColabShowcase } from "../projects/colab-showcase/src/index";
+import { CryptoPaymentShowcase } from "../projects/crypto-payment-animation/src/index";
 
 
 export const RemotionRoot: React.FC = () => {
@@ -50,6 +51,15 @@ export const RemotionRoot: React.FC = () => {
                 id="AnimationPlayground"
                 component={AnimationPlayground}
                 durationInFrames={900} // 30s @ 30fps (6 scenes * 150 frames)
+                fps={30}
+                width={1920}
+                height={1080}
+            />
+            {/* 註冊新專案影片 */}
+            <Composition
+                id="CryptoPaymentAnimation"
+                component={CryptoPaymentShowcase}
+                durationInFrames={300} // 10s @ 30fps
                 fps={30}
                 width={1920}
                 height={1080}
