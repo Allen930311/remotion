@@ -39,7 +39,7 @@ export const RemotionRoot: React.FC = () => {
             <Composition
                 id="AnimationPlayground"
                 component={AnimationPlayground}
-                durationInFrames={750} // 25s @ 30fps (5 scenes * 150 frames)
+                durationInFrames={900} // 30s @ 30fps (6 scenes * 150 frames)
                 fps={30}
                 width={1920}
                 height={1080}

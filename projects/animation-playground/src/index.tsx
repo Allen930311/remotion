@@ -4,6 +4,8 @@ import { D3Test } from './components/D3Test';
 import { GSAPTest } from './components/GSAPTest';
 import { LottieTestComp } from './components/LottieTest';
 import { CanvasTest } from './components/CanvasTest';
+import { FramerMotionTest } from './components/FramerMotionTest';
+import { AnimeJsTest } from './components/AnimeJsTest';
 
 export const AnimationPlayground: React.FC = () => {
     return (
@@ -21,6 +23,12 @@ export const AnimationPlayground: React.FC = () => {
                 <Series.Sequence durationInFrames={150}>
                     <CanvasTest />
                 </Series.Sequence>
+                <Series.Sequence durationInFrames={150}>
+                    <FramerMotionTest />
+                </Series.Sequence>
+                <Series.Sequence durationInFrames={150}>
+                    <AnimeJsTest />
+                </Series.Sequence>
             </Series>
 
             {/* Global Overlay */}
@@ -33,7 +41,7 @@ export const AnimationPlayground: React.FC = () => {
                 textShadow: '0 4px 8px rgba(0,0,0,0.5)',
                 zIndex: 100
             }}>
-                Remotion Animation Playground (Safe Mode)
+                Remotion Animation Playground
             </div>
         </AbsoluteFill>
     );
