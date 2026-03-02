@@ -2,8 +2,8 @@
 
 **中文** | [**English**](./README.md)
 
-# Remotion Animation Playground
-### 高性能「代碼即影片」展示空間，整合多圖表動畫庫 🚀
+# Remotion Video Studio
+### AI 驅動的「代碼即影片」生產流水線 🚀
 
 [![Remotion](https://img.shields.io/badge/Remotion-v4.0.0-blue?style=flat-square&logo=react)](https://www.remotion.dev/)
 [![React](https://img.shields.io/badge/React-v18.0.0-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
@@ -14,48 +14,81 @@
 
 ## 📖 專案簡介
 
-這是一個基於 **Remotion** 的高品質動畫實驗室與專案展示空間。我們探索「代碼即影片 (Video as Code)」的前沿技術，致力於將 React 的開發生態與專業影片製作流程無痛結合。
+基於 **Remotion** 的影片製作工作室，將 React 開發生態與專業影片製作流程無痛結合。本 Monorepo 包含多個影片專案以及一套 AI 驅動的技能系統，能串接從創意簡報到雲端渲染 MP4 的完整流水線。
 
-本專案解決了在網頁環境下製作高度客製化、動態數據驅動影片的痛點。透過將多種主流動畫庫（如 D3.js, GSAP, Framer Motion, Anime.js）與 Remotion 的影格同步機制深度整合，達成 100% 確定性的影格渲染與卓越的視覺質感。
-
-## 🌟 核心功能
-
-* ✅ **多庫深度整合**：在同一個影格流中流暢運行 D3.js (數據驅動)、GSAP (時間軸同步)、Lottie (向量圖形)、Framer Motion 與 Anime.js。
-* ✅ **影格鐵律同步**：所有動畫完全由 `useCurrentFrame()` 數據驅動，徹底杜絕渲染閃爍，確保匯出影片每一格都精準無誤。
-* ✅ **高級物理動效**：深度運用 `spring()` 與 `Easing` 達成具有「手感」的物理流體動畫，提升視覺高級感。
-* ✅ **強健佈局系統**：全面採用 `<AbsoluteFill>` 標準化佈局，解決 Remotion 預覽中的 CSS 坍塌與白畫面問題。
-- ✅ **一鍵預覽與渲染**：內建完整的開發伺服器與渲染腳本，支援快速即時預覽與高品質 MP4 輸出。
+核心特色：
+- **影格確定性渲染**：所有動畫完全由 `useCurrentFrame()` 數據驅動，徹底杜絕渲染閃爍。
+- **多庫深度整合**：D3.js、GSAP、Framer Motion、Anime.js、Lottie — 全部同步至 Remotion 影格時鐘。
+- **雲端一鍵渲染**：透過 Google Colab 一鍵渲染，自動輸出至 Google Drive。
 
 ## 🚀 專案清單
 
-- **Animation Playground (動畫實驗室)**：整合各大主流動畫庫的測試場景。
-- **Auto-Skill Intro**：AI auto-skill 系統的自動化開場影片。
-- **Remotion Skills Showcase**：Remotion 核心開發技能的視覺化展示。
+| 專案 | 說明 | 格式 |
+|---|---|---|
+| **Geopolitics Explainer** | 中東地緣政治分析 + 動態圖表 | 1080×1920 / 60s |
+| **Crypto Payment Animation** | 2.5D 手機展示 + 比特幣元素 | 1080×1920 / 10s |
+| **Colab Showcase** | 雲端渲染示範 | 1920×1080 / 10s |
+| **Animation Playground** | 多動畫庫測試場 | 1920×1080 |
+| **Auto-Skill Intro** | AI auto-skill 系統開場影片 | 1920×1080 |
+| **Skills Showcase** | Remotion 核心技能展示 | 1920×1080 |
+| **Digital Pet Playground** | 互動數位寵物動畫 | 1920×1080 |
+
+## 🛠️ AI 技能系統
+
+本專案內建一套專為影片製作設計的 AI 技能系統：
+
+| 技能 | 角色 |
+|---|---|
+| `remotion-master` | 🎛️ 流程編排器 — 唯一入口 |
+| `remotion-designer` | 🎨 動態設計師 — 產出 VIDEO_SPEC.md |
+| `remotion-developer` | 💻 程式碼生成 — 腳手架 & 場景組件 |
+| `remotion-assets` | 📦 素材管理 — TTS / 圖片 / 編碼 |
+| `remotion-official` | 📚 知識庫 — 26 份官方規則 + 4 份自訂擴充 |
 
 ## ⌨️ 快速開始
 
-請確保您已安裝 [Node.js](https://nodejs.org/)。
+```bash
+# 複製與安裝
+git clone https://github.com/Allen930311/remotion.git
+cd remotion && npm install
 
-1. **複製與安裝**：
-   ```bash
-   git clone https://github.com/Allen930311/remotion.git
-   cd remotion
-   npm install
-   ```
-2. **啟動預覽**：
-   ```bash
-   npm start
-   ```
-3. **渲染影片**：
-   ```bash
-   # 渲染特定組合 (例如：動畫實驗室)
-   npx remotion render src/index.ts AnimationPlayground out/playground.mp4
-   ```
+# 啟動 Remotion Studio 預覽
+npm start
+
+# 渲染特定影片
+npx remotion render src/index.ts GeopoliticsExplainer out/geopolitics_explainer.mp4
+```
+
+## ☁️ 雲端渲染 (Google Colab)
+
+1. 將最新代碼推送至 GitHub：`git push`。
+2. 在 Google Colab 開啟 `render_colab.ipynb`。
+3. 依序執行 **Cell 0** (環境) → **Cell 1** (安裝) → **Cell 2** (渲染)。
+4. 只需修改 `COMP_NAME` — 輸出檔名自動推導 (CamelCase → snake_case)。
+5. 渲染完成後自動複製至 Google Drive (`remotion_assets/`)。
+
+## 📁 專案結構
+
+```
+remotion/
+├── src/Root.tsx              # Composition 註冊中心
+├── projects/                 # 所有影片專案
+│   ├── geopolitics-explainer/
+│   ├── crypto-payment-animation/
+│   └── ...
+├── skill/                    # AI 技能系統
+│   ├── remotion-official/    # 知識庫 (rules/ + rules-custom/)
+│   ├── remotion-master/      # 流程編排器
+│   ├── remotion-designer/    # 設計規格
+│   ├── remotion-developer/   # 程式碼生成
+│   └── remotion-assets/      # 素材管理
+├── render_colab.ipynb        # 雲端渲染筆記本
+└── .auto-skill-local.md      # 專案踩坑經驗快取
+```
 
 ## 🤝 如何貢獻
 
-歡迎社區開發者參與貢獻！如果您開發了新的動畫組件：
-1. **Fork** 本倉庫並在 `projects/` 下建立資料夾。
+1. **Fork** 本倉庫並在 `projects/` 下建立新專案資料夾。
 2. 在 `src/Root.tsx` 中註冊您的 `Composition`。
 3. **提交 PR** 並附上說明或預覽影像。
 
