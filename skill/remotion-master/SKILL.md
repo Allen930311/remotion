@@ -10,12 +10,11 @@ Master orchestrator skill that chains the entire Remotion video pipeline togethe
 
 ## Architecture
 
-This skill is the orchestrator for 4 specialized sub-skills + 1 technical guideline provider:
+This skill is the orchestrator for 3 specialized sub-skills + 1 knowledge provider:
 1. **remotion-designer**: Generates `VIDEO_SPEC.md`
 2. **remotion-assets**: Prepares `ASSET_MANIFEST.md` and generates/converts assets
 3. **remotion-developer**: Scaffolds project, generates components, structures timeline
-4. **remotion-expert**: Applies animations, physics, rendering configs
-5. **remotion-official**: **Core Knowledge Provider**. Supplies official rules for 3D, Audio, Charts, and advanced API usage.
+4. **remotion-official**: **Core Knowledge Provider**. Supplies official rules for 3D, Audio, Charts, advanced API usage, **rendering configurations**, and **animation physics**.
 
 ## Pipeline Execution
 
@@ -23,19 +22,22 @@ When invoked, execute this pipeline in order:
 
 ### Step 1: Design (Delegated to remotion-designer)
 Pass the `$CREATIVE_BRIEF` to `remotion-designer` to generate `VIDEO_SPEC.md` inside `$PIPELINE_DIR/`.
-- **Official Check**: Consult `remotion-official` for feasibility of requested features (e.g., [charts](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/charts.md), [3d](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/3d.md)).
+- **Official Check**: Consult `remotion-official` for feasibility of requested features (e.g., `rules/charts.md`, `rules/3d.md`).
 
 ### Step 2: Assets (Delegated to remotion-assets)
 Pass the `VIDEO_SPEC.md` to `remotion-assets` to generate `ASSET_MANIFEST.md`.
-- **Official Check**: Follow [assets.md](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/assets.md) and [fonts.md](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/fonts.md) for optimized loading.
+- **Official Check**: Follow `rules/assets.md` and `rules/fonts.md` for optimized loading.
 
 ### Step 3: Development (Delegated to remotion-developer)
 Pass `VIDEO_SPEC.md` and `ASSET_MANIFEST.md` to `remotion-developer`.
-- **Official Check**: Use [sequencing.md](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/sequencing.md) for timeline structures and [tailwind.md](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/tailwind.md) for styling.
+- **Official Check**: Use `rules/sequencing.md` for timeline structures, `rules/timing.md` for spring physics and easing, `rules/transitions.md` for professional scene cuts. Refer to `rules-custom/prompting.md` for the 4-dimension prompting framework.
 
-### Step 4: Polish & Render (Delegated to remotion-expert)
-Pass the built components to `remotion-expert` to apply advanced physics and animations.
-- **Official Check**: Refer to [timing.md](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/timing.md) for advanced interpolation curves and [transitions.md](file:///c:/Users/Allen/.gemini/antigravity/global_skills/remotion-official/rules/transitions.md) for professional scene cuts.
+### Step 4: Polish & Render
+Apply advanced animations directly using `remotion-official` rules:
+- **Animation Polish**: `rules/timing.md` (spring presets, easing curves), `rules/animations.md` (stagger patterns)
+- **Transitions**: `rules/transitions.md` (TransitionSeries, Slide, Wipe, Flip)
+- **2.5D Effects**: `rules-custom/2.5d-showcase.md` (phone container + 3D rotation)
+- **Render Config**: `rules-custom/rendering.md` (platform specs, Colab setup, Windows compatibility)
 
 ## Input Format
 

@@ -25,19 +25,10 @@ src/remotion/compositions/MyVideo/
 ```
 
 ## 2. Sequence Layout (Composition)
-Transform the `VIDEO_SPEC.md` timing into frame-exact `SCENE_TIMING` constants (assume 30fps). Overlap scenes for cross-fade transitions.
+Transform the `VIDEO_SPEC.md` timing into frame-exact `SCENE_TIMING` constants (assume 30fps). Use `<Series>` for linear narratives to avoid manual `from` calculations.
 
-```tsx
-<AbsoluteFill>
-  <Sequence from={0} durationInFrames={150}>
-    <Scene1 />
-  </Sequence>
-  {/* Overlap by 15 frames for transition */}
-  <Sequence from={135} durationInFrames={300}>
-    <Scene2 />
-  </Sequence>
-</AbsoluteFill>
-```
+> 📖 **Detailed patterns**: See `remotion-official/rules/sequencing.md` for `Series`, `Sequence`, and negative offset overlap techniques.
+
 
 ## 3. Component Generation
 - Use `AbsoluteFill` for containers.

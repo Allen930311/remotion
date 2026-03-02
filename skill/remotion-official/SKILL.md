@@ -59,3 +59,11 @@ Read individual rule files for detailed explanations and code examples:
 - [rules/parameters.md](rules/parameters.md) - Make a video parametrizable by adding a Zod schema
 - [rules/maps.md](rules/maps.md) - Add a map using Mapbox and animate it
 - [rules/voiceover.md](rules/voiceover.md) - Adding AI-generated voiceover to Remotion compositions using ElevenLabs TTS
+
+## Custom rules (project-specific extensions)
+
+These are custom rules distilled from hands-on project experience:
+
+- [rules-custom/rendering.md](rules-custom/rendering.md) - Rendering commands, platform specs, Colab/Windows compatibility
+- [rules-custom/2.5d-showcase.md](rules-custom/2.5d-showcase.md) - 2.5D product showcase: phone container + 3D rotation + SVG lines
+- [rules-custom/prompting.md](rules-custom/prompting.md) - Structured prompting framework for AI-generated Remotion code
