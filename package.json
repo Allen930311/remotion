@@ -9,6 +9,7 @@
     "test": "remotion test"
   },
   "dependencies": {
+    "@remotion/google-fonts": "^4.0.431",
     "@remotion/lottie": "^4.0.429",
     "@remotion/paths": "^4.0.431",
     "@types/animejs": "^3.1.13",
