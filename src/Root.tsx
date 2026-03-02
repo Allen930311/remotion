@@ -7,7 +7,7 @@ import { RemotionSkillsShowcase } from "../projects/remotion-skills-showcase/src
 import { AnimationPlayground } from "../projects/animation-playground/src/index";
 import { ColabShowcase } from "../projects/colab-showcase/src/index";
 import { CryptoPaymentShowcase } from "../projects/crypto-payment-animation/src/index";
-
+import { GeopoliticsVideo } from "../projects/geopolitics-explainer/src/index";
 
 export const RemotionRoot: React.FC = () => {
     return (
@@ -63,6 +63,15 @@ export const RemotionRoot: React.FC = () => {
                 fps={30}
                 width={1920}
                 height={1080}
+            />
+            {/* 新增地緣政治解說專案 */}
+            <Composition
+                id="GeopoliticsExplainer"
+                component={GeopoliticsVideo}
+                durationInFrames={1800} // 60s @ 30fps
+                fps={30}
+                width={1080} // Vertical layout
+                height={1920}
             />
 
         </React.Fragment>
