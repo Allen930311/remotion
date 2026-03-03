@@ -9,10 +9,6 @@ export const GeopoliticsVideo: React.FC = () => {
     return (
         <AbsoluteFill style={{ backgroundColor: "#FAF8F5" }}>
             <Series>
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap"
-                    rel="stylesheet"
-                />
                 {/* Hook: 0 - 10s (300 frames) */}
                 <Series.Sequence durationInFrames={300}>
                     <Scene1Hook />
