@@ -4,7 +4,7 @@ import { loadFont as loadJetBrainsMono } from "@remotion/google-fonts/JetBrainsM
 // Load Chinese-compatible font with required weights
 const noto = loadNotoSansTC("normal", {
     weights: ["400", "700", "900"],
-    subsets: ["latin"],
+    subsets: ["latin", "chinese-traditional"],
 });
 
 const jetbrains = loadJetBrainsMono("normal", {
