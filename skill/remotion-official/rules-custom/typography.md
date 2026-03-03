@@ -6,23 +6,26 @@ description: CJK Font support and Theme-based styling in Remotion
 
 ## CJK (中文) 字型支持鐵律
 
-在 Remotion 中若需要顯示中文字，必須解決不同渲染環境（如 Google Colab）缺失字型的問題。
+在 Remotion 中若需要顯示中文字，必須解決不同渲染環境（如 Google Colab）缺失字型的問題。單純載入 WebFont 在 Headless 環境中經常因載入過慢導致 Tofu (方塊) 現象。
 
 **核心做法：**
-1. **安裝支持庫**：`npm install @remotion/google-fonts`
-2. **建立 `fonts.ts` 集中管理**：使用 `loadFont` 載入支持 CJK 的字型（如 `NotoSansTC`）。
-3. **阻塞渲染**：`@remotion/google-fonts` 會自動確保字型載入完成後才開始影格渲染，避免 Tofu (方塊) 現象。
+1. **載入最佳實踐**：使用 `@remotion/google-fonts` 時標配 `loadFont()`。**嚴禁手動限制 `subsets: ["latin"]`**，這會強制剔除所有中文字符。
+2. **Colab 穩定方案 (必備)**：Headless Chromium 渲染速度極快，經常來不及下載 WebFonts。**最強制且穩定的解決方案是在系統底層安裝字體**。
 
 ```tsx
-// src/fonts.ts
+// src/fonts.ts 推薦配置
 import { loadFont as loadNotoSansTC } from "@remotion/google-fonts/NotoSansTC";
 
-const noto = loadNotoSansTC("normal", {
-    weights: ["400", "700", "900"],
-    subsets: ["latin"],
-});
+// 直接使用 loadFont()，由 Remotion 自動處理 CJK 字符分塊載入
+const noto = loadNotoSansTC();
 
 export const FONT_FAMILY = noto.fontFamily;
+```
+
+**Colab OS 層級補救指令：**
+在 Colab Notebook 的安裝步驟中加入以下指令，確保 Puppeteer 絕對能抓到本地字體：
+```bash
+!sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
 ```
 
 ## 視覺規範化 (Theme Module)
